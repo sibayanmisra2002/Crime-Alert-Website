@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body{
+    background: linear-gradient(60deg, rgba(92 86 86) 13%, rgba(46 50 82) 51%, rgba(26 2 42) 85%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1em;
+    height: 100vh;
+}
+
+    table { 
+        width: 40em; 
+        border-collapse: collapse; 
+        margin:50px auto;
+        }
+    
+    /* Zebra striping */
+    tr:nth-of-type(odd) { 
+        background: rgb(65, 57, 57); 
+        }
+    
+    th { 
+        background: #083856; 
+        color: rgb(220, 233, 157); 
+        font-weight: bold; 
+        }
+    
+    td, th { 
+        padding: 10px; 
+        border: 1px solid #ccc; 
+        text-align: left; 
+        font-size: 18px;
+        }
+    
+    /* 
+    Max width before this PARTICULAR table gets nasty
+    This query will take effect for any screen smaller than 760px
+    and also iPads specifically.
+    */
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 512px) and (max-device-width: 768px)  {
+    
+        table { 
+              width: 100%; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            /* padding-left: 50%;  */
+        }
+    
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+            /* Label the data */
+            content: attr(data-column);    
+            color: #000;
+            font-weight: bold;
+        }

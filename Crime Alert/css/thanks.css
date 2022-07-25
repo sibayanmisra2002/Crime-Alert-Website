@@ -1,0 +1,15 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: rgb(199,210,210);
+	background: linear-gradient(60deg, rgba(92 86 86) 13%, rgba(46 50 82) 51%, rgba(26 2 42) 85%);
+
+}
+header{
+	color: rgb(220, 233, 157);
+}
+p{
+	color: antiquewhite;
+}
